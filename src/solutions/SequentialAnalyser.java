@@ -65,7 +65,7 @@ public class SequentialAnalyser implements CovidAnalyser {
 
     public static void main(String[] args) {
         long before = System.currentTimeMillis();
-        Patient[] patients = Reader.generateData(1000000000);
+        Patient[] patients = Reader.generateData(10000000);
         long after = System.currentTimeMillis();
         System.out.println("Read dataset in " + (after - before) + "ms\n# Patients in dataset: " + patients.length);
 
