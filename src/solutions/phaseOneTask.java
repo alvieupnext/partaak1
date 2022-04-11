@@ -28,7 +28,7 @@ public class phaseOneTask extends RecursiveTask<Metrics> {
             long icu = 0;
             long deceased = 0;
             long comorbidities = 0;
-            for (int i = lo; lo < hi; i++) { //increment counters when condition met (only the patients from low to high)
+            for (int i = lo; i < hi; i++) { //increment counters when condition met (only the patients from low to high)
                 Patient patient = patients[i];
                 if (patient.status == Status.LAB_CONFIRMED) labConfirmed += 1;
                 if (patient.sex == Sex.MALE) male += 1;
