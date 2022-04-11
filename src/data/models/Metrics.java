@@ -26,7 +26,7 @@ public class Metrics {
         //add the values from the second metric object and return this metric
         labConfirmed += m2.labConfirmed;
         male += m2.male;
-        female += m2.male;
+        female += m2.female;
         aged += m2.aged;
         hospitalised += m2.hospitalised;
         intensiveCare += m2.intensiveCare;
