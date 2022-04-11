@@ -22,6 +22,19 @@ public class Metrics {
         comorbidities = otherIllnesses;
     }
 
+    public Metrics merge(Metrics m2) {
+        //add the values from the second metric object and return this metric
+        labConfirmed += m2.labConfirmed;
+        male += m2.male;
+        female += m2.male;
+        aged += m2.aged;
+        hospitalised += m2.hospitalised;
+        intensiveCare += m2.intensiveCare;
+        deceased += m2.deceased;
+        comorbidities += m2.comorbidities;
+        return this;
+    }
+
     public Metrics() {}
 
     @Override
