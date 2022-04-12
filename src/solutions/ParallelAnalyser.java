@@ -3,7 +3,9 @@ package solutions;
 import data.models.Metrics;
 import data.models.Patient;
 
+import java.util.Date;
 import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.TimeUnit;
 
 /**
  * TODO: A parallel implementation of CovidAnalyser using Java Fork/Join. Carefully read the assignment for detailed instructions and requirements.
@@ -27,12 +29,24 @@ public class ParallelAnalyser implements CovidAnalyser  {
 
     @Override
     public Metrics phaseOne(Patient[] patients) {
-        return pool.invoke(new phaseOneTask(patients, 0, patients.length, T));
+        return pool.invoke(new PhaseOneTask(patients, 0, patients.length, T));
     }
 
     @Override
     public Long phaseTwo(Patient[] patients, Metrics metrics, long numFemales, long numICU) {
-        // TODO: Implement this method using Java Fork/Join.
-        return null;
+        //step one: up-pass
+        Node root = pool.invoke(new BuildTree(patients, 0, patients.length, T));
+        //step two: the down-pass (which will get our dates)
+        Date[] dates = new Date[2];
+        pool.invoke(new PrefixSum(root, 0, 0, patients, dates, numFemales, numICU));
+        Date date1 = dates[0];
+        Date date2 = dates[1];
+        // If one of the two dates is non-existing, no result can be computed.
+        if (date1 == null || date2 == null) {
+            return null;
+            // Otherwise, compute the time interval.
+        } else {
+            return Math.abs(TimeUnit.DAYS.convert(date2.getTime() - date1.getTime(), TimeUnit.MILLISECONDS));
+        }
     }
 }

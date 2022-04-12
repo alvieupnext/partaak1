@@ -4,13 +4,13 @@ import data.models.*;
 
 import java.util.concurrent.RecursiveTask;
 
-public class phaseOneTask extends RecursiveTask<Metrics> {
+public class PhaseOneTask extends RecursiveTask<Metrics> {
     Patient[] patients;
     int lo;
     int hi;
     int T; //sequential cutoff
 
-    public phaseOneTask(Patient[] patients, int lo, int hi, int T) {
+    public PhaseOneTask(Patient[] patients, int lo, int hi, int T) {
         this.patients = patients;
         this.lo = lo;
         this.hi = hi;
@@ -43,8 +43,8 @@ public class phaseOneTask extends RecursiveTask<Metrics> {
         }
         else {
             int mid = (lo + hi)/2 ; //get middle
-            phaseOneTask left = new phaseOneTask(patients, lo, mid, T); //create left and right task
-            phaseOneTask right = new phaseOneTask(patients, mid, hi, T);
+            PhaseOneTask left = new PhaseOneTask(patients, lo, mid, T); //create left and right task
+            PhaseOneTask right = new PhaseOneTask(patients, mid, hi, T);
             left.fork(); //fork the left task (creating a new thread)
             Metrics rightMetric = right.compute(); //do this computation ourselves
             Metrics leftMetric= left.join(); //wait on the left task to complete
