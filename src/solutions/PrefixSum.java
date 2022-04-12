@@ -29,6 +29,7 @@ public class PrefixSum extends RecursiveAction {
     protected void compute() {
         if (node.isALeaf()) {
             int sumFemales = node.numFemales + fromLeftFemales;
+            int sumICU = node.numICU + fromRightICU;
             //if our fromLeft is smaller than our target AND the sum is bigger than our target, then our target female patient is in this range
             if (fromLeftFemales < targetFemales && targetFemales <= sumFemales) {
                 int female = fromLeftFemales; //start female counter at from left
@@ -44,8 +45,6 @@ public class PrefixSum extends RecursiveAction {
                 }
             }
             //if our fromRight is smaller than our target and the sum is bigger than our target, then our target ICU patient is in this range
-            else {
-                int sumICU = node.numICU + fromRightICU;
                 if (fromRightICU < targetICU && targetICU <= sumICU) {
                     int ICU = fromRightICU;//start female counter at from right
                     for (int i = node.hi - 1; i >= node.lo; i--) { //traverse every patient in this range from right to left
@@ -59,12 +58,11 @@ public class PrefixSum extends RecursiveAction {
                         }
                     }
                 }
-            }
         } else {
             //add the ICU numbers from the right node to fromRightICU
             PrefixSum left = new PrefixSum(node.left, fromLeftFemales, fromRightICU + node.right.numICU, patients, dates, targetFemales, targetICU);
             //add the female numbers from the left node to fromLeftFemales
-            PrefixSum right = new PrefixSum(node.right, fromLeftFemales + node.left.numFemales, node.right.numICU, patients, dates, targetFemales, targetICU);
+            PrefixSum right = new PrefixSum(node.right, fromLeftFemales + node.left.numFemales, fromRightICU, patients, dates, targetFemales, targetICU);
             left.fork();
             right.compute();
             left.join();

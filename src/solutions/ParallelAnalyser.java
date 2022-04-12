@@ -1,5 +1,6 @@
 package solutions;
 
+import data.Reader;
 import data.models.Metrics;
 import data.models.Patient;
 
@@ -36,6 +37,7 @@ public class ParallelAnalyser implements CovidAnalyser  {
     public Long phaseTwo(Patient[] patients, Metrics metrics, long numFemales, long numICU) {
         //step one: up-pass
         Node root = pool.invoke(new BuildTree(patients, 0, patients.length, T));
+
         //step two: the down-pass (which will get our dates)
         Date[] dates = new Date[2];
         pool.invoke(new PrefixSum(root, 0, 0, patients, dates, numFemales, numICU));
@@ -48,5 +50,30 @@ public class ParallelAnalyser implements CovidAnalyser  {
         } else {
             return Math.abs(TimeUnit.DAYS.convert(date2.getTime() - date1.getTime(), TimeUnit.MILLISECONDS));
         }
+    }
+
+    public static void main(String[] args) {
+        long before = System.currentTimeMillis();
+        Patient[] patients = Reader.generateData(100000000);
+        long after = System.currentTimeMillis();
+        System.out.println("Read dataset in " + (after - before) + "ms\n# Patients in dataset: " + patients.length);
+
+        CovidAnalyser a = new ParallelAnalyser(2, 2000);
+
+        // Compute some global metrics.
+        before = System.currentTimeMillis();
+        Metrics metrics = a.phaseOne(patients);
+        after = System.currentTimeMillis();
+        System.out.println("Computed metrics in " + (after - before) + "ms:\n" + metrics);
+
+        // A more complicated query: how many days are there from
+        // the point where 75% of woman have been infected
+        // up to the point were still 2500 people in the dataset have to become infected who have comorbitidies and were later admitted to the ICU.
+        // (Both bounds included.)
+        long females = Math.round((metrics.female * 75.0) / 100.0);
+        before = System.currentTimeMillis();
+        Long days = a.phaseTwo(patients, metrics, females, 2500);
+        after = System.currentTimeMillis();
+        System.out.println("Computed result (" + days + " days) in " + (after - before) + "ms.");
     }
 }

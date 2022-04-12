@@ -39,14 +39,15 @@ public class Tests {
     public void testPhaseTwo() {
         CovidAnalyser sequential = new SequentialAnalyser();
         CovidAnalyser parallel = new ParallelAnalyser(4, 5000);
-        Patient[] patients = Reader.generateData(100000);
+        Patient[] patients = Reader.generateData(10000000);
 
         Metrics mseq = sequential.phaseOne(patients);
 
         for (int i = 1; i <= 5; i++) {
             Long dseq = sequential.phaseTwo(patients, mseq, i * 10000, i * 500);
             Long dpar = parallel.phaseTwo(patients, mseq, i * 10000, i * 500);
-
+            System.out.println(dseq);
+            System.out.println(dpar);
             assertEquals(dseq, dpar);
         }
     }
