@@ -24,12 +24,13 @@ public class ParallelAnalyser implements CovidAnalyser  {
     public ParallelAnalyser(int p, int T) {
         this.p = p;
         this.T = T;
-        //Hint: Initialise the Java Fork/Join framework here as well.
+        //Initialise the Java Fork/Join framework here as well.
         this.pool = new ForkJoinPool(p);
     }
 
     @Override
     public Metrics phaseOne(Patient[] patients) {
+        //start the phaseOneTask
         return pool.invoke(new PhaseOneTask(patients, 0, patients.length, T));
     }
 
@@ -40,7 +41,7 @@ public class ParallelAnalyser implements CovidAnalyser  {
 
         //step two: the down-pass (which will get our dates)
         Date[] dates = new Date[2];
-        pool.invoke(new PrefixSum(root, 0, 0, patients, dates, numFemales, numICU));
+        pool.invoke(new FixSum(root, 0, 0, patients, dates, numFemales, numICU));
         Date date1 = dates[0];
         Date date2 = dates[1];
         // If one of the two dates is non-existing, no result can be computed.
@@ -54,11 +55,11 @@ public class ParallelAnalyser implements CovidAnalyser  {
 
     public static void main(String[] args) {
         long before = System.currentTimeMillis();
-        Patient[] patients = Reader.generateData(100000000);
+        Patient[] patients = Reader.generateData(110000000);
         long after = System.currentTimeMillis();
         System.out.println("Read dataset in " + (after - before) + "ms\n# Patients in dataset: " + patients.length);
 
-        CovidAnalyser a = new ParallelAnalyser(2, 2000);
+        CovidAnalyser a = new ParallelAnalyser(4, 5000);
 
         // Compute some global metrics.
         before = System.currentTimeMillis();

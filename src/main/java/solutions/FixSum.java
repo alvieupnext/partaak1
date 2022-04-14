@@ -6,7 +6,7 @@ import data.models.Sex;
 import java.util.Date;
 import java.util.concurrent.RecursiveAction;
 
-public class PrefixSum extends RecursiveAction {
+public class FixSum extends RecursiveAction {
     Node node;
     int fromLeftFemales;
     int fromRightICU;
@@ -15,7 +15,7 @@ public class PrefixSum extends RecursiveAction {
     long targetFemales;
     long targetICU;
 
-    public PrefixSum(Node node, int fromLeftFemales, int fromRightICU, Patient[] patients, Date[] dates, long targetFemales, long targetICU) {
+    public FixSum(Node node, int fromLeftFemales, int fromRightICU, Patient[] patients, Date[] dates, long targetFemales, long targetICU) {
         this.node = node;
         this.fromLeftFemales = fromLeftFemales;
         this.fromRightICU = fromRightICU;
@@ -60,9 +60,9 @@ public class PrefixSum extends RecursiveAction {
                 }
         } else {
             //add the ICU numbers from the right node to fromRightICU
-            PrefixSum left = new PrefixSum(node.left, fromLeftFemales, fromRightICU + node.right.numICU, patients, dates, targetFemales, targetICU);
+            FixSum left = new FixSum(node.left, fromLeftFemales, fromRightICU + node.right.numICU, patients, dates, targetFemales, targetICU);
             //add the female numbers from the left node to fromLeftFemales
-            PrefixSum right = new PrefixSum(node.right, fromLeftFemales + node.left.numFemales, fromRightICU, patients, dates, targetFemales, targetICU);
+            FixSum right = new FixSum(node.right, fromLeftFemales + node.left.numFemales, fromRightICU, patients, dates, targetFemales, targetICU);
             left.fork();
             right.compute();
             left.join();

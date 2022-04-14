@@ -4,9 +4,9 @@ package solutions;
 import data.Reader;
 import data.models.Metrics;
 import data.models.Patient;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.TestCase.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /** Unit tests to help verify your implementation.
  * Do not modify these tests, and ensure that the tests pass.

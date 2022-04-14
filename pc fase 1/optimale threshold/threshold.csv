@@ -1,0 +1,17 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: T"
+"pc.phaseOne.threshold.benchmark","avgt",1,25,6722.917542,3251.749954,"ms/op",1
+"pc.phaseOne.threshold.benchmark","avgt",1,25,2724.846587,522.055859,"ms/op",10
+"pc.phaseOne.threshold.benchmark","avgt",1,25,1664.595557,63.037021,"ms/op",100
+"pc.phaseOne.threshold.benchmark","avgt",1,25,963.233024,49.057709,"ms/op",1000
+"pc.phaseOne.threshold.benchmark","avgt",1,25,965.503390,40.745449,"ms/op",2500
+"pc.phaseOne.threshold.benchmark","avgt",1,25,923.758301,39.131800,"ms/op",5000
+"pc.phaseOne.threshold.benchmark","avgt",1,25,894.313423,22.442959,"ms/op",7500
+"pc.phaseOne.threshold.benchmark","avgt",1,25,881.296146,25.321189,"ms/op",10000
+"pc.phaseOne.threshold.benchmark","avgt",1,25,880.386395,12.378188,"ms/op",25000
+"pc.phaseOne.threshold.benchmark","avgt",1,25,899.306173,40.263447,"ms/op",50000
+"pc.phaseOne.threshold.benchmark","avgt",1,25,880.857237,10.238409,"ms/op",75000
+"pc.phaseOne.threshold.benchmark","avgt",1,25,900.592542,41.528151,"ms/op",100000
+"pc.phaseOne.threshold.benchmark","avgt",1,25,892.432806,42.213468,"ms/op",250000
+"pc.phaseOne.threshold.benchmark","avgt",1,25,864.456918,31.606722,"ms/op",500000
+"pc.phaseOne.threshold.benchmark","avgt",1,25,875.466467,35.383629,"ms/op",750000
+"pc.phaseOne.threshold.benchmark","avgt",1,25,890.330967,51.984913,"ms/op",1000000

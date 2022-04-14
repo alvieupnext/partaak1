@@ -10,6 +10,7 @@ public class PhaseOneTask extends RecursiveTask<Metrics> {
     int hi;
     int T; //sequential cutoff
 
+    //constructor
     public PhaseOneTask(Patient[] patients, int lo, int hi, int T) {
         this.patients = patients;
         this.lo = lo;
@@ -48,7 +49,7 @@ public class PhaseOneTask extends RecursiveTask<Metrics> {
             left.fork(); //fork the left task (creating a new thread)
             Metrics rightMetric = right.compute(); //do this computation ourselves
             Metrics leftMetric= left.join(); //wait on the left task to complete
-            return leftMetric.merge(rightMetric);
+            return leftMetric.merge(rightMetric); //merge both metrics together
         }
     }
 }
