@@ -18,7 +18,7 @@ public class cores {
         @Setup(Level.Trial)
         public void setup(){
             patients = Reader.generateData(110000000);
-            parallel = new ParallelAnalyser(p, 50); //TODO get optimal threshold
+            parallel = new ParallelAnalyser(p, 75000); //TODO get optimal threshold
         }
         public Patient[] patients;
         public CovidAnalyser parallel;
