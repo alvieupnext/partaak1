@@ -19,14 +19,19 @@ public class cores {
         public void setup(){
             patients = Reader.generateData(110000000);
             parallel = new ParallelAnalyser(p, 75000); //TODO get optimal threshold
+            metrics = parallel.phaseOne(patients);
+            females = Math.round((metrics.female * 75.0) / 100.0);
         }
         public Patient[] patients;
+        public Metrics metrics;
+        public long females;
+        public long ICU = 2500;
         public CovidAnalyser parallel;
     }
 
     @Benchmark @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
-    public Metrics benchmark(State pat) { //using optimal threshold
-        return pat.parallel.phaseOne(pat.patients);
+    public long benchmark(State pat) { //using optimal threshold
+        return pat.parallel.phaseTwo(pat.patients, pat.metrics, pat.females, pat.ICU);
     }
 }
