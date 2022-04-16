@@ -1,0 +1,13 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: p"
+"pc.phaseOne.cores.benchmark","avgt",1,25,864.500809,13.726467,"ms/op",1
+"pc.phaseOne.cores.benchmark","avgt",1,25,433.796873,10.259461,"ms/op",2
+"pc.phaseOne.cores.benchmark","avgt",1,25,283.631893,10.284895,"ms/op",3
+"pc.phaseOne.cores.benchmark","avgt",1,25,212.209255,10.879663,"ms/op",4
+"pc.phaseOne.cores.benchmark","avgt",1,25,163.551299,3.457949,"ms/op",5
+"pc.phaseOne.cores.benchmark","avgt",1,25,152.922159,5.057545,"ms/op",6
+"pc.phaseOne.cores.benchmark","avgt",1,25,140.735384,1.713611,"ms/op",7
+"pc.phaseOne.cores.benchmark","avgt",1,25,138.943148,1.327364,"ms/op",8
+"pc.phaseOne.cores.benchmark","avgt",1,25,137.391216,0.689865,"ms/op",9
+"pc.phaseOne.cores.benchmark","avgt",1,25,137.320469,0.329526,"ms/op",10
+"pc.phaseOne.cores.benchmark","avgt",1,25,137.219113,0.200805,"ms/op",11
+"pc.phaseOne.cores.benchmark","avgt",1,25,137.580398,0.152422,"ms/op",12

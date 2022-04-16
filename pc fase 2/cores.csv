@@ -1,0 +1,13 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: p"
+"pc.phaseTwo.cores.benchmark","avgt",1,25,220.897579,3.265493,"ms/op",1
+"pc.phaseTwo.cores.benchmark","avgt",1,25,144.622227,7.108572,"ms/op",2
+"pc.phaseTwo.cores.benchmark","avgt",1,25,130.004899,0.096057,"ms/op",3
+"pc.phaseTwo.cores.benchmark","avgt",1,25,131.956668,3.854576,"ms/op",4
+"pc.phaseTwo.cores.benchmark","avgt",1,25,131.893167,0.160732,"ms/op",5
+"pc.phaseTwo.cores.benchmark","avgt",1,25,133.242702,0.193041,"ms/op",6
+"pc.phaseTwo.cores.benchmark","avgt",1,25,135.199553,3.980861,"ms/op",7
+"pc.phaseTwo.cores.benchmark","avgt",1,25,134.876327,0.251657,"ms/op",8
+"pc.phaseTwo.cores.benchmark","avgt",1,25,135.330445,0.196872,"ms/op",9
+"pc.phaseTwo.cores.benchmark","avgt",1,25,135.799567,0.240397,"ms/op",10
+"pc.phaseTwo.cores.benchmark","avgt",1,25,136.148902,0.194080,"ms/op",11
+"pc.phaseTwo.cores.benchmark","avgt",1,25,136.627638,0.105991,"ms/op",12
