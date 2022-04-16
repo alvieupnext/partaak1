@@ -1,4 +1,0 @@
-"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: p"
-"pc.phaseOne.cores.benchmark","avgt",1,25,86.091150,1.180221,"ms/op",1
-"pc.phaseOne.cores.benchmark","avgt",1,25,43.778489,0.512771,"ms/op",2
-"pc.phaseOne.cores.benchmark","avgt",1,25,23.927641,0.550939,"ms/op",4
