@@ -19,7 +19,7 @@ public class speedup {
 
         @Setup(Level.Trial)
         public void setup(){
-            parallel = new ParallelAnalyser(6, T);
+            parallel = new ParallelAnalyser(64, T);
             patients = Reader.generateData(2000000000);
             metrics = parallel.phaseOne(patients);
             females = Math.round((metrics.female * 75.0) / 100.0);
