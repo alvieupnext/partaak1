@@ -10,7 +10,7 @@ import solutions.ParallelAnalyser;
 import java.util.concurrent.TimeUnit;
 
 // , jvmArgs = {"-Xmx64g" } Firefly Server handig
-@Fork(value = 3, warmups = 1, jvmArgs = {"-Xmx128g" } )
+@Fork(value = 2, warmups = 1, jvmArgs = {"-Xmx128g" } )
 public class speedup {
     @org.openjdk.jmh.annotations.State(Scope.Thread)
     public static class State {

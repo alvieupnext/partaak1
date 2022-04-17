@@ -10,7 +10,7 @@ import solutions.ParallelAnalyser;
 import java.util.concurrent.TimeUnit;
 
 
-@Fork(value = 3, warmups = 1, jvmArgs = {"-Xmx128g" } )
+@Fork(value = 2, warmups = 1, jvmArgs = {"-Xmx128g" } )
 public class threshold {
     @org.openjdk.jmh.annotations.State(Scope.Thread)
     public static class State {
