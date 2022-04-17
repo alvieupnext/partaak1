@@ -9,13 +9,13 @@ import solutions.SequentialAnalyser;
 
 import java.util.concurrent.TimeUnit;
 
-@Fork(value = 5, warmups = 1)
+@Fork(value = 3, warmups = 1, jvmArgs = {"-Xmx128g" } )
 public class seq {
     @org.openjdk.jmh.annotations.State(Scope.Thread)
     public static class State {
         @Setup(Level.Trial)
         public void setup(){
-            patients = Reader.generateData(110000000);
+            patients = Reader.generateData(2000000000);
             seq = new SequentialAnalyser();
         }
         CovidAnalyser seq;

@@ -10,7 +10,7 @@ import solutions.ParallelAnalyser;
 import java.util.concurrent.TimeUnit;
 
 // , jvmArgs = {"-Xmx64g" } Firefly Server handig
-@Fork(value = 5, warmups = 1)
+@Fork(value = 3, warmups = 1, jvmArgs = {"-Xmx128g" } )
 public class speedup {
     @org.openjdk.jmh.annotations.State(Scope.Thread)
     public static class State {
@@ -20,7 +20,7 @@ public class speedup {
         @Setup(Level.Trial)
         public void setup(){
             parallel = new ParallelAnalyser(6, T);
-            patients = Reader.generateData(110000000);
+            patients = Reader.generateData(2000000000);
             metrics = parallel.phaseOne(patients);
             females = Math.round((metrics.female * 75.0) / 100.0);
         }

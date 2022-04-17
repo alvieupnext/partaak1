@@ -9,6 +9,7 @@ import solutions.ParallelAnalyser;
 
 import java.util.concurrent.TimeUnit;
 
+@Fork(value = 3, warmups = 1, jvmArgs = {"-Xmx128g" } )
 public class cores {
     @org.openjdk.jmh.annotations.State(Scope.Thread)
     public static class State {
@@ -16,8 +17,8 @@ public class cores {
         private int p;
         @Setup(Level.Trial)
         public void setup(){
-            patients = Reader.generateData(110000000);
-            parallel = new ParallelAnalyser(p, 50); //TODO get optimal threshold
+            patients = Reader.generateData(2000000000);
+            parallel = new ParallelAnalyser(p, 75000); //TODO get optimal threshold
         }
         public Patient[] patients;
         public CovidAnalyser parallel;

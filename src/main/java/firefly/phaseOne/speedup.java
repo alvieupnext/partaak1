@@ -9,7 +9,7 @@ import solutions.ParallelAnalyser;
 
 import java.util.concurrent.TimeUnit;
 
-@Fork(value = 5, warmups = 1)
+@Fork(value = 3, warmups = 1, jvmArgs = {"-Xmx128g" } )
 public class speedup {
     @org.openjdk.jmh.annotations.State(Scope.Thread)
     public static class State {
@@ -17,8 +17,8 @@ public class speedup {
         private int T;
         @Setup(Level.Trial)
         public void setup(){
-            patients = Reader.generateData(110000000);
-            parallel = new ParallelAnalyser(6, T);
+            patients = Reader.generateData(2000000000);
+            parallel = new ParallelAnalyser(64, T);
         }
         public Patient[] patients;
         CovidAnalyser parallel;
