@@ -43,7 +43,9 @@ public class PhaseOneTask extends RecursiveTask<Metrics> {
             return new Metrics(labConfirmed, male, female, aged, hospitalised, icu, deceased, comorbidities);
         }
         else {
-            int mid = (lo + hi)/2 ; //get middle
+            int lom = lo /2;
+            int him = hi/2;
+            int mid = lom+him ; //get middle
             PhaseOneTask left = new PhaseOneTask(patients, lo, mid, T); //create left and right task
             PhaseOneTask right = new PhaseOneTask(patients, mid, hi, T);
             left.fork(); //fork the left task (creating a new thread)

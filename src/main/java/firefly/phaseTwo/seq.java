@@ -9,14 +9,16 @@ import solutions.SequentialAnalyser;
 
 import java.util.concurrent.TimeUnit;
 
-@Fork(value = 2, warmups = 1, jvmArgs = {"-Xmx128g" } )
+@Warmup(iterations = 5)
+@Measurement(iterations = 15)
+@Fork(value = 1, jvmArgs = {"-Xms64g","-Xmx128g" } )
 public class seq {
     @org.openjdk.jmh.annotations.State(Scope.Thread)
     public static class State {
         @Setup(Level.Trial)
         public void setup(){
             seq = new SequentialAnalyser();
-            patients = Reader.generateData(2000000000);
+            patients = Reader.generateData(1100000000);
             metrics = seq.phaseOne(patients);
             females = Math.round((metrics.female * 75.0) / 100.0);
         }

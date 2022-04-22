@@ -1,0 +1,18 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: T"
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,1298.366824,106.848844,"ms/op",100
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,978.039355,58.336552,"ms/op",1000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,954.991530,55.201393,"ms/op",2500
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,946.180043,51.608467,"ms/op",5000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,951.067493,55.356840,"ms/op",7500
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,932.067683,44.065964,"ms/op",10000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,930.631699,47.651622,"ms/op",25000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,906.327657,0.853432,"ms/op",50000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,906.057970,0.429960,"ms/op",75000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,905.584066,0.471315,"ms/op",100000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,905.424327,0.429606,"ms/op",250000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,904.581740,0.315746,"ms/op",500000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,904.976378,0.509625,"ms/op",750000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,905.041193,0.250779,"ms/op",1000000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,903.968855,0.791810,"ms/op",2500000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,912.231911,1.214290,"ms/op",5000000
+"firefly.phaseTwo.speedup.benchmark","avgt",1,15,917.991219,2.416988,"ms/op",10000000

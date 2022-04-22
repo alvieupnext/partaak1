@@ -1,0 +1,10 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: p"
+"firefly.phaseOne.cores.benchmark","avgt",1,15,9032.037438,3.170707,"ms/op",1
+"firefly.phaseOne.cores.benchmark","avgt",1,15,4038.495559,3.940488,"ms/op",2
+"firefly.phaseOne.cores.benchmark","avgt",1,15,1949.521000,106.613613,"ms/op",4
+"firefly.phaseOne.cores.benchmark","avgt",1,15,1043.532036,19.900202,"ms/op",8
+"firefly.phaseOne.cores.benchmark","avgt",1,15,905.540892,4.058192,"ms/op",16
+"firefly.phaseOne.cores.benchmark","avgt",1,15,891.862249,0.351125,"ms/op",32
+"firefly.phaseOne.cores.benchmark","avgt",1,15,920.243878,0.476832,"ms/op",64
+"firefly.phaseOne.cores.benchmark","avgt",1,15,956.559950,0.792082,"ms/op",96
+"firefly.phaseOne.cores.benchmark","avgt",1,15,983.102985,0.403926,"ms/op",128

@@ -1,0 +1,2 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit"
+"firefly.phaseTwo.seq.benchmark","avgt",1,15,3923.870534,47.279473,"ms/op"

@@ -29,7 +29,9 @@ public class BuildTree extends RecursiveTask<Node> {
             return new Node(null, null, lo, hi, female, numICU); //return new leaf node with counters
         }
         else {
-            int mid = (lo + hi)/2; //get middle of range
+            int lom = lo /2;
+            int him = hi/2;
+            int mid = lom+him ; //get middle
             BuildTree left = new BuildTree(patients, lo, mid, T); //create two new BuildTree tasks
             BuildTree right = new BuildTree(patients, mid, hi, T);
             left.fork(); //create a new thread for the left task
