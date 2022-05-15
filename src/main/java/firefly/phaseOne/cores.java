@@ -52,7 +52,7 @@ public class cores {
         @Setup(Level.Trial)
         public void setup(){
             patients = Reader.generateData(1100000000);
-            parallel = new ParallelAnalyser(p, 500000); //TODO get firefly sequential threshold
+            parallel = new ParallelAnalyser(p, 500000);
         }
         public Patient[] patients;
         public CovidAnalyser parallel;
