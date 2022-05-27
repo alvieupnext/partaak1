@@ -2,6 +2,8 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 
+# netid: avargasg
+
 speedup = pd.read_csv("pc/speedupf2/cores.csv")
 
 def prepare(df):

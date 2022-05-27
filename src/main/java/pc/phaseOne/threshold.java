@@ -9,6 +9,8 @@ import solutions.ParallelAnalyser;
 
 import java.util.concurrent.TimeUnit;
 
+// netid: avargasg
+
 @Fork(value = 5, warmups = 1)
 public class threshold {
     @org.openjdk.jmh.annotations.State(Scope.Thread)

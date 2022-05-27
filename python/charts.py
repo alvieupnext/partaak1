@@ -2,6 +2,8 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 
+# netid: avargasg
+
 seq = pd.read_csv("pc/thresholdf2/seq.csv")
 
 su = pd.read_csv("pc/thresholdf2/speedup.csv")

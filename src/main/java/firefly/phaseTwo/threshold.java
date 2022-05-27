@@ -9,6 +9,8 @@ import solutions.ParallelAnalyser;
 
 import java.util.concurrent.TimeUnit;
 
+// netid: avargasg
+
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)
 @Fork(value = 1, jvmArgs = {"-Xms64g","-Xmx128g" } )
